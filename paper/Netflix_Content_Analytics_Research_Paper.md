@@ -57,13 +57,13 @@ The primary data source analyzed in this study is the Netflix Movies and TV Show
 | `listed_in` | Multi-label String | 514 | 0 | 0.00% | 0.00% | 0.00% | Explodes into 19,315 tags across 42 atomic genres |
 | `description` | Free Text | 8,775 | 0 | 0.00% | 0.00% | 0.00% | 59 records share synopses across multi-language dubs |
 
-### 2.2 Formal Proof of Format-Conditioned Missingness (MAR vs. MCAR)
+### 2.2 Evidence of Format-Conditioned Director Missingness and Rejection of MCAR
 In Rubin's (1976) missing-data taxonomy, data are Missing Completely at Random (MCAR) only if the probability of missingness $P(M = 1)$ is statistically independent of both observed and unobserved variables. When we test the independence of `director` missingness ($M_{\text{director}} \in \{0, 1\}$) against content format (`type` $\in \{\text{Movie}, \text{TV Show}\}$), we observe an extreme divergence: only $188$ of $6,128$ deduplicated Movies ($3.07\%$) lack a credited director, compared to $2,445$ of $2,675$ deduplicated TV Shows ($91.40\%$).
 
 A $2 \times 2$ Pearson Chi-square test of independence yields:
 $$\chi^2 = 6,926.74, \quad df = 1, \quad p < 10^{-300}, \quad \text{Cramér's } V = \sqrt{\frac{\chi^2}{N}} = 0.8871$$
 
-This near-unity effect size ($V = 0.8871$) reflects industrial metadata conventions: feature films credit a primary director at the title level, whereas episodic television series typically credit showrunners/creators or assign distinct directors per individual episode. Consequently, $M_{\text{director}}$ is strictly **Missing at Random (MAR) conditioned on `type`**. If an analyst executes listwise deletion (`df.dropna()`), $91.40\%$ of all television series are purged from the sample, distorting the catalogue format ratio from $69.61\%$ Movies to $96.3\%$ Movies.
+This near-unity association ($P(M_{\text{director}} \mid \text{Type}) \neq P(M_{\text{director}})$) decisively **rejects the MCAR assumption** and is consistent with a **Missing at Random (MAR) mechanism conditional on observed content format**, although a Missing Not at Random (MNAR) mechanism cannot be ruled out using the available observed data alone. If an analyst executes listwise deletion (`df.dropna()`), $91.40\%$ of all television series are purged from the sample, distorting the catalogue format ratio from $69.61\%$ Movies to $96.3\%$ Movies.
 
 ### 2.3 Cross-Column Schema Contamination and String Deduplication
 Forensic inspection of categorical domain values uncovered three additional structural anomalies in the raw CSV file:

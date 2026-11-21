@@ -227,7 +227,7 @@
 
   <div class="author-block">
     <div class="author-name">David Olukayode</div>
-    <div class="author-affil">AI &amp; ML Engineer | Applied Research | Trustworthy AI</div>
+    <div class="author-affil">Applied Data Science &amp; Statistical Analytics | Empirical Media &amp; Systems Research</div>
     <div class="author-links">
       Code &amp; Reproducibility Archive: <code>https://github.com/DavidDeez/netflix-content-analytics</code> &nbsp;|&nbsp;
       Interactive Data Appendix: <code>https://huggingface.co/spaces/DavidDeezzy/netflix-content-analytics</code>
@@ -237,10 +237,10 @@
   <div class="abstract-box">
     <div class="abstract-title">Abstract</div>
     <p style="margin-bottom:0;">
-      Subscription Video-on-Demand (SVOD) platforms manage complex transnational content portfolios balancing original commissions against multi-year licensed libraries across distinct regional production hubs, formats, and audience maturity tiers. While media economics literature qualitatively examines streaming internationalization and licensing window compression, empirical evaluations of catalogue metadata frequently suffer from unaddressed schema contamination, improper treatment of missingness mechanisms, and conflation of production vintage with platform ingestion timestamps. In this paper, we execute a comprehensive empirical investigation of the Netflix global catalogue snapshot (<em>N</em> = 8,807 raw records; <em>N</em> = 8,803 deduplicated unique titles spanning original releases from 1925 to 2021 and platform additions from 2008 to September 2021). First, we formalize a data quality audit proving that <code>director</code> missingness (29.91% overall) follows a Missing at Random (MAR) mechanism strongly conditioned on content format (91.41% missing in television series vs. 3.07% in feature films; &chi;<sup>2</sup> = 6,926.74, <em>df</em> = 1, <em>p</em> &lt; 10<sup>&minus;300</sup>, Cram&eacute;r's <em>V</em> = 0.8871), demonstrating that naive listwise deletion introduces severe selection bias. Second, using First Normal Form (1NF) multi-label tokenization across 7,972 geo-tagged titles (122 countries) and 19,315 genre classifications (42 categories), we establish statistically significant regional format specialization (&chi;<sup>2</sup> = 687.68, <em>df</em> = 9, <em>p</em> = 3.07 &times; 10<sup>&minus;142</sup>, Cram&eacute;r's <em>V</em> = 0.3017): South Asian production led by India is overwhelmingly film-centric (92.0% Movies vs. 8.0% TV Shows), whereas East Asian production hubs in South Korea (73.6% TV Shows) and Japan (62.6% TV Shows) specialize in serialized episodic content. Third, by isolating <em>acquisition lag</em> (<em>L<sub>i</sub></em> = <em>Y</em><sub><em>i</em>,added</sub> &minus; <em>Y</em><sub><em>i</em>,released</sub>), we prove that television series enter the catalogue significantly closer to their initial premiere (51.98% added in their release year; median lag = 0.0 years, mean = 2.31 years) than feature films (30.40% same-year additions; median lag = 2.0 years, mean = 5.73 years; Mann-Whitney <em>U</em> = 1.035 &times; 10<sup>7</sup>, <em>p</em> = 2.62 &times; 10<sup>&minus;98</sup>), where 29.12% of films represent back-catalogue titles licensed six or more years post-release. Finally, harmonizing Motion Picture Association (MPAA) film ratings with Television Parental Guidelines demonstrates that while 75.61% of the catalogue targets Mature Adults (45.51%) or Teens (30.10%), television series allocate a significantly larger share to Kids and Family programming (29.50%) than feature films (20.71%; &chi;<sup>2</sup> = 98.16, <em>df</em> = 3, <em>p</em> = 3.86 &times; 10<sup>&minus;21</sup>, Cram&eacute;r's <em>V</em> = 0.1056).
+      Empirical analyses of Subscription Video-on-Demand (SVOD) catalogues frequently suffer from unexamined schema contamination, improper treatment of non-random missingness, violations of observation independence when analyzing multi-label attributes, and conflation of original production years with platform addition timestamps. This paper presents a methodological and empirical investigation of the Netflix global catalogue snapshot (<em>N</em> = 8,807 raw records; <em>N</em> = 8,803 deduplicated unique titles spanning release years 1925–2021 and additions through September 2021). We make four principal contributions: (1) <strong>Forensic Auditing &amp; Rejection of MCAR:</strong> We recover 100% of missing duration records from cross-column schema shifts and demonstrate that <code>director</code> missingness (29.91% overall; 91.40% in TV Shows vs. 3.07% in Movies) strongly rejects Missing Completely at Random (MCAR; &chi;<sup>2</sup> = 6,926.74, <em>p</em> &lt; 10<sup>&minus;300</sup>, Cram&eacute;r's <em>V</em> = 0.8871), a pattern consistent with format-conditioned Missing at Random (MAR) though MNAR cannot be excluded from observed data alone; (2) <strong>Title-Grain Independence &amp; Regional Format Divergence:</strong> Using First Normal Form (1NF) tokenization across 7,972 geo-tagged titles (122 distinct country labels) paired with strictly independent one-row-per-title sensitivity tests (primary country <em>V</em> = 0.3339; single-country only <em>V</em> = 0.3730), we establish that credits attributed to India skew heavily toward Movies (92.0%), whereas credits attributed to South Korea (73.6–79.0% TV) and Japan (62.6–68.2% TV) skew toward episodic series; (3) <strong>Catalogue Addition Lag Dynamics:</strong> Defining <em>catalogue addition lag</em> as <em>L<sub>i</sub></em> = <em>Y</em><sub><em>i</em>,added</sub> &minus; <em>Y</em><sub><em>i</em>,released</sub>, we show that TV Shows exhibit a significantly shorter observed interval between recorded release year and Netflix addition year (median = 0.0 years; 51.98% same-year) than Movies (median = 2.0 years; 29.12% added &ge; 6 years post-release; Mann-Whitney <em>U</em> = 1.035 &times; 10<sup>7</sup>, <em>p</em> = 2.62 &times; 10<sup>&minus;98</sup>); and (4) <strong>Rating Harmonization &amp; Sensitivity Analysis:</strong> Reconciling US theatrical (MPAA) and television rating scales across three alternative mappings confirms that episodic television consistently allocates a higher share of catalogue titles to children's programming than feature films (29.50% vs. 20.71% under baseline 4-tier harmonization, <em>V</em> = 0.1056; 17.47% vs. 7.31% under strict young-children criteria, <em>V</em> = 0.1535).
     </p>
     <div class="keywords">
-      <strong>Keywords:</strong> Subscription Video-on-Demand (SVOD); Exploratory Data Analysis; Missingness Mechanisms (MAR); Relational Normalization; Media Economics; Licensing Windows; Content Analytics; Netflix
+      <strong>Keywords:</strong> Subscription Video-on-Demand (SVOD); Exploratory Data Analysis; Missingness Mechanisms (MCAR Rejection); Relational Normalization (1NF); Contingency Sensitivity Analysis; Catalogue Addition Lag; Netflix
     </div>
   </div>
 
@@ -255,7 +255,7 @@
     <li><strong>Conflation of Supply Inventory with Audience Demand:</strong> Catalogue datasets record supply-side availability (title presence and descriptive metadata) rather than demand-side consumption telemetry (viewing hours, completion rates, or subscriber retention). Treating genre frequency as a direct proxy for audience popularity invalidates downstream inference.</li>
     <li><strong>Unexamined Missingness Mechanisms:</strong> Standard preprocessing scripts routinely invoke global listwise deletion (<code>df.dropna()</code>) or unconditional mode imputation on incomplete categorical fields (<code>director</code>, <code>country</code>, <code>cast</code>) without testing whether missingness is statistically independent of content format.</li>
     <li><strong>Violation of Relational Atomicity (1NF):</strong> Attributes such as <code>country</code> and <code>listed_in</code> store comma-delimited multi-label strings. Evaluating unexploded string literals undercounts international co-productions (16.55% of geo-tagged titles) and obscures secondary genre classifications.</li>
-    <li><strong>Temporal Event Conflation:</strong> Analysts frequently confuse a work's original theatrical or broadcast premiere year (<code>release_year</code>) with its platform ingestion date (<code>date_added</code>), failing to isolate the licensing or acquisition lag separating initial production from SVOD availability.</li>
+    <li><strong>Temporal Event Conflation:</strong> Analysts frequently confuse a work's original theatrical or broadcast premiere year (<code>release_year</code>) with its platform ingestion date (<code>date_added</code>), failing to isolate the licensing or catalogue addition lag separating initial production from SVOD availability.</li>
   </ol>
 
   <h3 class="subsec-title">1.1 Research Questions and Analytical Framework</h3>
@@ -294,7 +294,7 @@
       </tr>
       <tr>
         <td><strong>RQ04</strong></td>
-        <td>How has content addition velocity evolved over time compared to original production years, and how does acquisition lag differ by format?</td>
+        <td>How has content addition velocity evolved over time compared to original production years, and how does catalogue addition lag differ by format?</td>
         <td>Annual/monthly time-series decomposition, seasonality matrix, Mann-Whitney <em>U</em> test on lag <em>L<sub>i</sub></em></td>
         <td><code>date_added</code>, <code>release_year</code>, <code>acquisition_lag</code></td>
       </tr>
@@ -386,7 +386,7 @@
         <td class="num">29.91%</td>
         <td class="num">3.07%</td>
         <td class="num">91.41%</td>
-        <td><strong>MAR conditioned on <code>type</code></strong>; assign <code>'Unknown / Not Applicable'</code></td>
+        <td><strong>Rejects MCAR (consistent with MAR | <code>type</code>)</strong>; assign <code>'Unknown / Not Applicable'</code></td>
       </tr>
       <tr>
         <td><code>country</code></td>
@@ -471,7 +471,7 @@
     </tbody>
   </table>
 
-  <h3 class="subsec-title">2.2 Statistical Proof of Format-Conditioned Missingness (MAR vs. MCAR)</h3>
+  <h3 class="subsec-title">2.2 Evidence of Format-Conditioned Director Missingness and Rejection of MCAR</h3>
   <p>
     Under Rubin's (1976) missingness framework, observations are Missing Completely at Random (MCAR) if and only if the missingness indicator <em>M</em> &isin; {0, 1} is statistically independent of both observed variables <em>Y</em><sub>obs</sub> and unobserved variables <em>Y</em><sub>mis</sub>. To test whether <code>director</code> missingness (<em>M</em><sub>dir</sub>) satisfies MCAR, we construct a 2 &times; 2 contingency table crossing <em>M</em><sub>dir</sub> against content format (<code>type</code> &isin; {Movie, TV Show}) on the deduplicated corpus (<em>N</em> = 8,803). Among Movies, only 188 of 6,128 records (3.07%) lack a director credit; among TV Shows, 2,445 of 2,675 records (91.40%) lack a director credit.
   </p>
@@ -482,7 +482,7 @@
     &chi;<sup>2</sup> = &sum;<sub><em>i,j</em></sub> (<em>O<sub>ij</sub></em> &minus; <em>E<sub>ij</sub></em>)<sup>2</sup> / <em>E<sub>ij</sub></em> = 6,926.74, &emsp; <em>df</em> = 1, &emsp; <em>p</em> &lt; 10<sup>&minus;300</sup>, &emsp; Cram&eacute;r's <em>V</em> = &radic;(&chi;<sup>2</sup> / <em>N</em>) = 0.8871
   </div>
   <p>
-    The magnitude of Cram&eacute;r's <em>V</em> = 0.8871 confirms that <code>director</code> missingness is governed by a structural <strong>Missing at Random (MAR) mechanism conditioned on content format</strong>. In screen media cataloging, feature films credit a principal director at the work level, whereas serialized television series credit showrunners or assign different directors across individual episodes. Consequently, applying listwise deletion (<code>df.dropna()</code>) eliminates 91.40% of all television series, corrupting the sample format distribution from 69.61% Movies to 96.3% Movies. Similarly, <code>country</code> missingness is twice as prevalent in TV Shows (14.61%) as in Movies (7.18%), and <code>cast</code> missingness (9.37% overall) is concentrated in unscripted documentaries, nature docuseries, and stand-up specials. We therefore preserve all incomplete records and encode missing categorical values transparently (<code>'Unknown / Not Applicable'</code> for director; <code>'Unknown / Unspecified'</code> for country; <code>'Unknown / Uncredited'</code> for cast).
+    The magnitude of Cram&eacute;r's <em>V</em> = 0.8871 establishes that <code>director</code> missingness is strongly associated with content format (<em>P</em>(<em>M</em><sub>dir</sub> | <code>type</code>) &ne; <em>P</em>(<em>M</em><sub>dir</sub>)). <strong>This finding decisively rejects the MCAR assumption and is consistent with a MAR mechanism conditional on observed content format, although a Missing Not at Random (MNAR) mechanism cannot be ruled out using observed data alone.</strong> In screen media cataloging, feature films credit a principal director at the work level, whereas serialized television series credit showrunners or assign different directors across individual episodes. Consequently, applying listwise deletion (<code>df.dropna()</code>) eliminates 91.40% of all television series, corrupting the sample format distribution from 69.61% Movies to 96.3% Movies. Similarly, <code>country</code> missingness is twice as prevalent in TV Shows (14.61%) as in Movies (7.18%), and <code>cast</code> missingness (9.37% overall) is concentrated in unscripted documentaries, nature docuseries, and stand-up specials. We therefore preserve all incomplete records and encode missing categorical values transparently (<code>'Unknown / Not Applicable'</code> for director; <code>'Unknown / Unspecified'</code> for country; <code>'Unknown / Uncredited'</code> for cast).
   </p>
 
   <h3 class="subsec-title">2.3 Schema Contamination Recovery and Normalized String Deduplication</h3>
@@ -606,20 +606,20 @@
     If an analyst explodes multi-valued columns directly inside the main DataFrame, a US–UK–France co-production with three genre tags expands into 3 &times; 3 = 9 rows, corrupting univariate title counts, runtime distributions, and maturity rating shares. Conversely, if an analyst inspects only unexploded string literals or retains only the first listed country, international partnerships and secondary genre classifications are systematically undercounted. To preserve relational integrity, we implement a <strong>dual-grain normalization architecture</strong>:
   </p>
   <ol>
-    <li><strong>Title-Grain Primary Relation (<code>df_clean</code>, <em>N</em> = 8,803):</strong> Maintains a strict one-row-per-title invariant for all univariate and bivariate title-level analyses (format share, release year, addition date, acquisition lag, runtime/season distributions, and maturity ratings).</li>
-    <li><strong>Country-Title Atomic Relation (<code>df_countries</code>, <em>N<sub>c</sub></em> = 10,014):</strong> Tokenizes <code>country_clean</code> on commas, strips whitespace, filters empty and <code>'Unknown / Unspecified'</code> tokens, and projects atomic pairs (<code>show_id</code>, <code>country_name</code>) across 122 unique sovereign territories.</li>
+    <li><strong>Title-Grain Primary Relation (<code>df_clean</code>, <em>N</em> = 8,803):</strong> Maintains a strict one-row-per-title invariant for all univariate and bivariate title-level analyses (format share, release year, addition date, catalogue addition lag, runtime/season distributions, and maturity ratings).</li>
+    <li><strong>Country-Title Atomic Relation (<code>df_countries</code>, <em>N<sub>c</sub></em> = 10,014):</strong> Tokenizes <code>country_clean</code> on commas, strips whitespace, filters empty and <code>'Unknown / Unspecified'</code> tokens, and projects atomic pairs (<code>show_id</code>, <code>country_name</code>) across 122 distinct country labels.</li>
     <li><strong>Genre-Title Atomic Relation (<code>df_genres</code>, <em>N<sub>g</sub></em> = 19,315):</strong> Tokenizes <code>listed_in</code> into atomic pairs (<code>show_id</code>, <code>genre_name</code>) across 42 unique Netflix genre categories.</li>
   </ol>
 
   <h3 class="subsec-title">3.2 Temporal Lag Formalization and Cross-Regulatory Rating Harmonization</h3>
   <p>
-    For each title <em>i</em> with a valid platform addition timestamp (<em>n</em> = 8,793), let <em>Y</em><sub><em>i</em>,added</sub> = year(<code>date_added_clean</code><sub><em>i</em></sub>) and let <em>Y</em><sub><em>i</em>,released</sub> = <code>release_year</code><sub><em>i</em></sub>. We define the <strong>Acquisition Lag</strong> <em>L<sub>i</sub></em> (in calendar years) as:
+    For each title <em>i</em> with a valid platform addition timestamp (<em>n</em> = 8,793), let <em>Y</em><sub><em>i</em>,added</sub> = year(<code>date_added_clean</code><sub><em>i</em></sub>) and let <em>Y</em><sub><em>i</em>,released</sub> = <code>release_year</code><sub><em>i</em></sub>. We define the <strong>Catalogue Addition Lag</strong> <em>L<sub>i</sub></em> (in calendar years) as:
   </p>
   <div class="equation">
     <em>L<sub>i</sub></em> = <em>Y</em><sub><em>i</em>,added</sub> &minus; <em>Y</em><sub><em>i</em>,released</sub>
   </div>
   <p>
-    An acquisition lag of <em>L<sub>i</sub></em> = 0 indicates a contemporary release ingested into Netflix during its original premiere year (characteristic of Netflix Originals and day-and-date exclusive co-productions), whereas <em>L<sub>i</sub></em> &ge; 6 indicates a deep back-catalogue library acquisition licensed well after its initial theatrical or broadcast window.
+    We treat <em>L<sub>i</sub></em> strictly as an observed <strong>catalogue addition lag proxy</strong> measuring the interval between recorded <code>release_year</code> and <code>year_added</code>. Because <code>netflix_titles.csv</code> does not record contract execution dates, regional availability rollouts, Netflix Original status, or whether a multi-season show's <code>release_year</code> reflects its debut or most recent season, <em>L<sub>i</sub></em> = 0 should be interpreted as same-year catalogue ingestion rather than direct proof of first-run original commissioning.
   </p>
   <p>
     To enable valid cross-format comparisons of content maturity (RQ06), we reconcile the 14 standardized rating codes (after merging 3 occurrences of <code>UR</code> into <code>NR</code>) across the US Motion Picture Association (MPAA) theatrical scale and the US Television Parental Guidelines into four mutually exclusive <strong>Audience Maturity Tiers</strong>: (1) <em>Kids &amp; Family</em> (<code>TV-Y</code>, <code>TV-Y7</code>, <code>TV-Y7-FV</code>, <code>G</code>, <code>TV-G</code>, <code>PG</code>, <code>TV-PG</code>); (2) <em>Teens 13+</em> (<code>PG-13</code>, <code>TV-14</code>); (3) <em>Mature Adults 17+</em> (<code>R</code>, <code>TV-MA</code>, <code>NC-17</code>); and (4) <em>Unrated / Unknown</em> (<code>NR</code> and missing).
@@ -654,7 +654,7 @@
   <div class="page-break"></div>
   <div class="header-banner" style="display:none;">
     <span>Olukayode (2026) &middot; Structural Composition, Geographical Specialization, and Licensing Lag in SVOD</span>
-    <span>Section 4.2: Temporal Ingestion Velocity &amp; Acquisition Lag Dynamics</span>
+    <span>Section 4.2: Temporal Ingestion Velocity &amp; Catalogue Addition Lag Dynamics</span>
   </div>
 
   <h3 class="subsec-title">4.2 Platform Ingestion Velocity and Seasonality Dynamics (RQ04)</h3>
@@ -771,13 +771,13 @@
     As documented in Table 4 and Figure 8A, annual ingestion velocity expanded nearly 25-fold between 2015 (82 titles) and 2019 (2,013 deduplicated titles). Notably, when total additions moderated in 2020 (1,879 titles), the reduction was confined entirely to feature films (1,421 &rarr; 1,284), whereas episodic television additions reached an all-time high of 595 series and expanded their share of annual additions from 24.94% (2018) to 33.71% (2021).
   </p>
 
-  <h3 class="subsec-title">4.3 Non-Parametric Analysis of Acquisition Lag (<em>year_added &minus; release_year</em>)</h3>
+  <h3 class="subsec-title">4.3 Non-Parametric Analysis of Catalogue Addition Lag (<em>year_added &minus; release_year</em>)</h3>
   <p>
-    To test whether Movies and TV Shows operate under fundamentally different licensing window regimes, we evaluate the acquisition lag <em>L<sub>i</sub></em> = <em>Y</em><sub><em>i</em>,added</sub> &minus; <em>Y</em><sub><em>i</em>,released</sub> across the <em>n</em> = 8,779 titles with non-negative lag (6,126 Movies and 2,653 TV Shows; Table 5 and Figure 12).
+    To test whether Movies and TV Shows operate under fundamentally different licensing window regimes, we evaluate the catalogue addition lag <em>L<sub>i</sub></em> = <em>Y</em><sub><em>i</em>,added</sub> &minus; <em>Y</em><sub><em>i</em>,released</sub> across the <em>n</em> = 8,779 titles with non-negative lag (6,126 Movies and 2,653 TV Shows; Table 5 and Figure 12).
   </p>
 
   <table>
-    <caption>Table 5: Parametric, Non-Parametric, and Windowed Distribution of Acquisition Lag <em>L<sub>i</sub></em> by Content Format</caption>
+    <caption>Table 5: Parametric, Non-Parametric, and Windowed Distribution of Catalogue Addition Lag <em>L<sub>i</sub></em> by Content Format</caption>
     <thead>
       <tr>
         <th>Format</th>
@@ -824,20 +824,20 @@
   </table>
 
   <div class="fig-box">
-    <img src="../visuals/12_acquisition_lag_distribution.png" alt="Figure 12: Acquisition Lag Distribution" />
+    <img src="../visuals/12_acquisition_lag_distribution.png" alt="Figure 12: Catalogue Addition Lag Distribution" />
     <div class="fig-caption">
-      <strong>Figure 12:</strong> Content acquisition lag analysis (<em>L<sub>i</sub></em> = <code>year_added</code> &minus; <code>release_year</code>). Panel A compares the proportional distribution across five licensing age windows between Movies and TV Shows. Panel B tracks mean acquisition lag by addition year from 2015 to 2021, capturing the post-2017 divergence as Netflix paired first-run original TV series with older licensed film libraries.
+      <strong>Figure 12:</strong> Content catalogue addition lag analysis (<em>L<sub>i</sub></em> = <code>year_added</code> &minus; <code>release_year</code>). Panel A compares the proportional distribution across five licensing age windows between Movies and TV Shows. Panel B tracks mean catalogue addition lag by addition year from 2015 to 2021, capturing the post-2017 divergence as Netflix paired first-run original TV series with older licensed film libraries.
     </div>
   </div>
 
   <p>
-    Because acquisition lag is heavily right-skewed (spanning 0 to 93 years), we perform a two-sided Mann-Whitney <em>U</em> test comparing the rank distributions of Movies and TV Shows:
+    Because catalogue addition lag is heavily right-skewed (spanning 0 to 93 years), we perform a two-sided Mann-Whitney <em>U</em> test comparing the rank distributions of Movies and TV Shows:
   </p>
   <div class="equation">
     Mann-Whitney <em>U</em> = 10,354,434.5, &emsp; <em>z</em> = 21.05, &emsp; <em>p</em> = 2.62 &times; 10<sup>&minus;98</sup>
   </div>
   <p>
-    The test confirms a highly significant structural divergence: <strong>51.98% of all television series</strong> are added to Netflix in the exact calendar year of their initial broadcast (median lag = 0.0 years; 75.69% within &le; 2 years), compared to <strong>30.40% of feature films</strong> (median lag = 2.0 years). Conversely, <strong>29.12% of all Movies</strong> are older library titles added 6 or more years after theatrical premiere (11.62% in the 6–10 year window and 17.50% in the 11+ year archival window), compared to only 12.66% of TV Shows.
+    The test confirms that <strong>TV Shows exhibit a significantly shorter observed interval between recorded release year and Netflix catalogue-addition year than Movies</strong>: 51.98% of TV Shows have an observed lag of 0 years (median = 0.0 years; 75.69% within &le; 2 years), compared to 30.40% of Movies (median = 2.0 years). Conversely, 29.12% of Movies have an observed lag of &ge; 6 years (11.62% in 6–10 years; 17.50% in 11+ years), compared to 12.66% of TV Shows. While part of the low lag in TV Shows reflects contemporary additions, it is also influenced by Netflix's convention of updating <code>release_year</code> on returning multi-season series.
   </p>
 
   <!-- ======================= PAGE 5 ======================= -->
@@ -849,11 +849,11 @@
 
   <h3 class="subsec-title">4.4 Geographical Production Hierarchy and Regional Format Specialization (RQ02)</h3>
   <p>
-    Evaluating our exploded First Normal Form country relation (<code>df_countries</code>, <em>N<sub>c</sub></em> = 10,014 country credits across <em>n</em> = 7,972 geo-tagged titles and 122 sovereign territories) reveals high geographic Pareto concentration. The top 10 producing countries account for 7,555 credits (75.44% of all country attributions). As noted in Section 3.1, because 16.55% of geo-tagged titles are international co-productions crediting multiple countries, Table 6 reports both the share of geo-tagged titles (<em>n</em> = 7,972) and the share of the total deduplicated catalogue (<em>N</em> = 8,803) alongside within-country format shares.
+    Evaluating our exploded First Normal Form country relation (<code>df_countries</code>, <em>N<sub>c</sub></em> = 10,014 country credits across <em>n</em> = 7,972 geo-tagged titles and 122 distinct country labels) reveals high geographic Pareto concentration. The top 10 most frequently credited countries of origin account for 7,555 credits (75.44% of all country attributions). As noted in Section 3.1, because 16.55% of geo-tagged titles are international co-productions crediting multiple countries, Table 6 reports both the share of geo-tagged titles (<em>n</em> = 7,972) and the share of the total deduplicated catalogue (<em>N</em> = 8,803) alongside within-country format shares.
   </p>
 
   <table>
-    <caption>Table 6: Top 10 Content-Producing Countries and Within-Country Format Specialization (Full Co-Production Attribution)</caption>
+    <caption>Table 6: Top 10 Most Frequently Credited Countries of Origin and Within-Country Format Specialization (Full Co-Production Attribution)</caption>
     <thead>
       <tr>
         <th class="num">Rank</th>
@@ -989,13 +989,7 @@
   </div>
 
   <p>
-    To test whether format allocation is homogeneous across the top 10 production hubs, we evaluate Pearson's Chi-square test on the 10 &times; 2 contingency table (Table 6):
-  </p>
-  <div class="equation">
-    &chi;<sup>2</sup> = 687.68, &emsp; <em>df</em> = 9, &emsp; <em>p</em> = 3.07 &times; 10<sup>&minus;142</sup>, &emsp; Cram&eacute;r's <em>V</em> = 0.3017
-  </div>
-  <p>
-    This highly significant association reflects regional industrial specialization in how Netflix sources international programming:
+    <strong>Statistical Independence &amp; Co-Production Sensitivity Analysis:</strong> In the exploded country relation (Table 6), a co-produced title (16.55% of geo-tagged titles) contributes one credit to each participating country. Because Pearson's &chi;<sup>2</sup> test requires independent observations, running inference directly on exploded credits (<em>n</em> = 7,555 credits across top 10 countries; &chi;<sup>2</sup> = 687.68, <em>df</em> = 9, <em>p</em> = 3.07 &times; 10<sup>&minus;142</sup>, <em>V</em> = 0.3017) inflates the effective sample size. To verify that regional format divergence holds under strict observation independence (one row per unique title), we evaluate two title-grain sensitivity specifications: (a) <strong>Primary Country Only</strong> (assigning each title exclusively to its first-listed country, <em>n</em> = 6,217 independent titles across the same top 10 countries), which yields <strong>&chi;<sup>2</sup> = 693.18, <em>df</em> = 9, <em>p</em> = 2.03 &times; 10<sup>&minus;143</sup>, Cram&eacute;r's <em>V</em> = 0.3339</strong> (India = 91.96% Movies; South Korea = 77.73% TV Shows; Japan = 67.18% TV Shows); and (b) <strong>Strictly Single-Country Titles Only</strong> (excluding all multi-country co-productions, <em>n</em> = 5,280 independent titles), which yields <strong>&chi;<sup>2</sup> = 734.57, <em>df</em> = 9, <em>p</em> = 2.55 &times; 10<sup>&minus;152</sup>, Cram&eacute;r's <em>V</em> = 0.3730</strong> (India = 93.43% Movies; South Korea = 79.00% TV Shows; Japan = 68.18% TV Shows). Removing co-production overlap actually <em>increases</em> the effect size from <em>V</em> = 0.3017 to <em>V</em> = 0.3730:
   </p>
   <ul>
     <li><strong>Western Production Hubs (US, UK, Canada, France, Spain, Germany, Mexico):</strong> Maintain balanced multi-format portfolios closely tracking the global baseline, with episodic television representing between 19.5% (Germany) and 34.3% (Mexico and UK) of national attributions. The United Kingdom (33.75% TV Shows) and Canada (28.31% TV Shows) serve as major English-language co-production partners on dramatic miniseries, docuseries, and children's television.</li>
@@ -1012,7 +1006,7 @@
 
   <h3 class="subsec-title">4.5 Genre Taxonomy Architecture and Multivariate Specialization (RQ03 &amp; RQ07)</h3>
   <p>
-    Across the 19,315 atomic genre tags in <code>df_genres</code> (42 unique categories), the five highest-volume classifications overall are <code>International Movies</code> (2,749 titles; 31.23% of the 8,803 catalogue), <code>Dramas</code> (2,425; 27.55%), <code>Comedies</code> (1,672; 18.99%), <code>International TV Shows</code> (1,350; 15.34%), and <code>Documentaries</code> (869; 9.87%) (Figure 4). Taken together, <code>International Movies</code> and <code>International TV Shows</code> appear on <strong>4,099 unique titles (46.56% of the entire Netflix catalogue)</strong>.
+    Across the 19,315 atomic genre tags in <code>df_genres</code> (42 unique categories), the five highest-volume classifications overall are <code>International Movies</code> (2,749 titles; 31.23% of the 8,803 catalogue), <code>Dramas</code> (2,425; 27.55%), <code>Comedies</code> (1,672; 18.99%), <code>International TV Shows</code> (1,350; 15.34%), and <code>Documentaries</code> (869; 9.87%) (Figure 4). Taken together, Netflix's taxonomic genre labels <code>International Movies</code> and <code>International TV Shows</code> appear on <strong>4,099 unique titles (46.56% of the catalogue)</strong> (note that this reflects Netflix's internal genre tagging rather than a verified count of non-US origin).
   </p>
 
   <div class="fig-box">
@@ -1045,7 +1039,7 @@
   </div>
 
   <p>
-    Figure 11 presents the multivariate synthesis (RQ07) joining <code>df_countries</code> and <code>df_genres</code> on <code>show_id</code> across the top 8 countries and top 8 genres. Row normalization demonstrates that the <strong>United States</strong> and <strong>United Kingdom</strong> specialize heavily in non-fiction <code>Documentaries</code> (15.6% and 14.1% of their top-8 genre assignments, respectively, vs. 1.2% in India and 0.7% in South Korea) and <code>Independent Movies</code> (11.9% US; 8.1% UK; 11.2% France; 10.4% Canada). Conversely, <strong>India</strong> concentrates 81.3% of its top-8 genre tags in <code>International Movies</code> (38.0%), <code>Dramas</code> (29.1%), and <code>Comedies</code> (14.2%), while <strong>South Korea</strong> (51.0% <code>International TV Shows</code>, 12.8% <code>TV Dramas</code>) and <strong>Japan</strong> (43.5% <code>International TV Shows</code>, 16.4% <code>Action &amp; Adventure</code>) dominate serialized television and action/anime storytelling.
+    Figure 11 presents the descriptive attribution matrix (RQ07) formed by an inner join between <code>df_countries</code> and <code>df_genres</code> on <code>show_id</code> (producing 22,012 total country-genre attribution pairs across the corpus, and <strong>8,569 attributed country-genre credit pairs across 4,756 unique titles</strong> within the Top 8 Countries &times; Top 8 Genres submatrix). Because titles with multiple countries and multiple genres receive proportional attribution weight across cells, Figure 11 is interpreted strictly as a descriptive attribution profile rather than an independent title-level contingency test. Row normalization demonstrates that the <strong>United States</strong> and <strong>United Kingdom</strong> specialize heavily in non-fiction <code>Documentaries</code> (15.6% and 14.1% of their top-8 genre assignments, respectively, vs. 1.2% in India and 0.7% in South Korea) and <code>Independent Movies</code> (11.9% US; 8.1% UK; 11.2% France; 10.4% Canada). Conversely, <strong>India</strong> concentrates 81.3% of its top-8 genre tags in <code>International Movies</code> (38.0%), <code>Dramas</code> (29.1%), and <code>Comedies</code> (14.2%), while <strong>South Korea</strong> (51.0% <code>International TV Shows</code>, 12.8% <code>TV Dramas</code>) and <strong>Japan</strong> (43.5% <code>International TV Shows</code>, 16.4% <code>Action &amp; Adventure</code>) dominate serialized television and action/anime storytelling.
   </p>
 
   <!-- ======================= PAGE 7 ======================= -->
@@ -1379,7 +1373,7 @@
     &chi;<sup>2</sup> = 98.16, &emsp; <em>df</em> = 3, &emsp; <em>p</em> = 3.86 &times; 10<sup>&minus;21</sup>, &emsp; Cram&eacute;r's <em>V</em> = 0.1056
   </div>
   <p>
-    Strategically, while Netflix positions three-quarters of its overall library (75.61%) for Mature Adult and Teen demographics, it relies disproportionately on episodic television (<code>Kids' TV</code>, animated series) rather than standalone feature films to drive household retention among families with young children.
+    <strong>Rating Harmonization Assumptions &amp; Sensitivity Analysis:</strong> Because the MPAA theatrical system and US Television Parental Guidelines are not exact equivalents—particularly regarding whether <code>PG</code> and <code>TV-PG</code> belong with younger children's content or general/teen audiences—and because Cram&eacute;r's <em>V</em> = 0.1056 represents a modest effect size despite its small <em>p</em>-value, we evaluate two alternative classifications across all <em>n</em> = 8,714 rated titles: (1) <strong>Mapping B (Disaggregated 4-Tier)</strong> separates <em>Strict Young Kids</em> (<code>TV-Y</code>, <code>TV-Y7</code>, <code>TV-Y7-FV</code>, <code>G</code>, <code>TV-G</code>; <em>n</em> = 908) from <em>Parental Guidance</em> (<code>PG</code>, <code>TV-PG</code>; <em>n</em> = 1,150), yielding <strong>17.47% Young Kids in TV Shows vs. 7.31% in Movies</strong> (2.39 : 1 ratio; &chi;<sup>2</sup> = 205.22, <em>df</em> = 3, <em>p</em> = 3.14 &times; 10<sup>&minus;44</sup>, Cram&eacute;r's <em>V</em> = 0.1535); and (2) <strong>Mapping C (3-Tier with <code>PG</code>/<code>TV-PG</code> merged into Teens)</strong> yields the same 17.47% vs. 7.31% Young Kids split (&chi;<sup>2</sup> = 205.15, <em>df</em> = 2, <em>p</em> = 2.83 &times; 10<sup>&minus;45</sup>, Cram&eacute;r's <em>V</em> = 0.1534). Thus, the finding that episodic television allocates a higher share of catalogue listings to children's programming than feature films is robust across classification boundaries (and stronger when <code>PG</code>/<code>TV-PG</code> are separated). Note that this distribution describes <em>catalogue supply representation</em>; viewer engagement and subscriber retention data would be required to test whether this supply translates into household viewing or retention.
   </p>
 
   <h2 class="sec-title">5. Discussion, Scope Limitations &amp; Research Synthesis</h2>
@@ -1390,7 +1384,7 @@
   </p>
 
   <div class="fig-box" style="padding:8px 10px;">
-    <svg viewBox="0 0 880 185" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg" style="max-height:135px;font-family:'Segoe UI',Arial,sans-serif;">
+    <svg viewBox="0 0 860 200" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg" style="max-height:165px;font-family:'Segoe UI',Arial,sans-serif;">
       <defs>
         <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
           <path d="M 0 1 L 10 5 L 0 9 z" fill="#1e293b" />
@@ -1406,7 +1400,7 @@
       <text x="24" y="101" fill="#334155" font-size="9">- 88 leading-space date strings</text>
       <text x="18" y="120" fill="#1e293b" font-size="9.5" font-weight="bold">&bull; MAR Missingness Proof:</text>
       <text x="24" y="135" fill="#b91c1c" font-size="9" font-weight="bold">- Director null: 91.4% TV vs 3.1% M</text>
-      <text x="24" y="149" fill="#334155" font-size="8.8">(&chi;&sup2; = 6,926.7, V = 0.8871)</text>
+      <text x="24" y="149" fill="#334155" font-size="8.8">(Rejects MCAR: V = 0.8871)</text>
 
       <!-- Arrow 1 -> 2 -->
       <line x1="193" y1="92" x2="222" y2="92" stroke="#1e293b" stroke-width="1.6" marker-end="url(#arrow)"/>
@@ -1434,12 +1428,12 @@
       <text x="666" y="34" fill="#ffffff" font-size="10.5" font-weight="bold" text-anchor="middle">3. Empirical Mechanisms Governing Global SVOD Portfolio Supply</text>
 
       <rect x="470" y="49" width="192" height="50" rx="3" fill="#ffffff" stroke="#cbd5e1"/>
-      <text x="566" y="63" fill="#0f172a" font-size="9.2" font-weight="bold" text-anchor="middle">A. Regional Format Specialization</text>
+      <text x="566" y="63" fill="#0f172a" font-size="9.2" font-weight="bold" text-anchor="middle">A. Regional Format Split (V = 0.33)</text>
       <text x="566" y="76" fill="#334155" font-size="8.5" text-anchor="middle">India: 92.0% Movies (Cinema Model)</text>
       <text x="566" y="88" fill="#334155" font-size="8.5" text-anchor="middle">S. Korea (73.6% TV) &amp; Japan (62.6% TV)</text>
 
       <rect x="670" y="49" width="192" height="50" rx="3" fill="#ffffff" stroke="#cbd5e1"/>
-      <text x="766" y="63" fill="#0f172a" font-size="9.2" font-weight="bold" text-anchor="middle">B. Licensing Lag Asymmetry (L_i)</text>
+      <text x="766" y="63" fill="#0f172a" font-size="9.2" font-weight="bold" text-anchor="middle">B. Addition Lag Proxy (L_i)</text>
       <text x="766" y="76" fill="#334155" font-size="8.5" text-anchor="middle">TV: 52.0% same-yr (Median lag = 0 yr)</text>
       <text x="766" y="88" fill="#334155" font-size="8.5" text-anchor="middle">Movies: 29.1% library (&ge; 6 yrs; Med = 2 yr)</text>
 
@@ -1497,7 +1491,7 @@
         <td><strong>F5</strong></td>
         <td>Regional Format Specialization (RQ02)</td>
         <td>India is 91.97% Movies; South Korea (73.59% TV) and Japan (62.58% TV) are series-driven (&chi;<sup>2</sup> = 687.68, <em>V</em> = 0.3017)</td>
-        <td>Netflix tailors regional acquisition to local industrial comparative advantage (Bollywood vs. K-Drama/Anime)</td>
+        <td>Holds under 1-row-per-title primary-country (V=0.3339) and single-country (V=0.3730) independence tests</td>
       </tr>
       <tr>
         <td><strong>F6</strong></td>
@@ -1519,9 +1513,9 @@
       </tr>
       <tr>
         <td><strong>F9</strong></td>
-        <td>Acquisition Lag Asymmetry (RQ04)</td>
+        <td>Catalogue Addition Lag Asymmetry (RQ04)</td>
         <td>51.98% of TV Shows added in release year (median lag = 0 yrs) vs. 30.40% of Movies (median = 2 yrs; <em>p</em> = 2.62&times;10<sup>&minus;98</sup>)</td>
-        <td>TV series operate on a first-run model; Movies blend originals with deep library licensing (29.12% &ge; 6 yrs old)</td>
+        <td>TV Shows exhibit shorter observed addition lag than Movies (29.12% of Movies added &ge; 6 yrs post-release)</td>
       </tr>
       <tr>
         <td><strong>F10</strong></td>
@@ -1573,7 +1567,7 @@
 
   <h2 class="sec-title">6. Conclusion</h2>
   <p>
-    This paper demonstrated that elevating exploratory data analysis from superficial chart generation to rigorous empirical science requires systematic interrogation of missingness mechanisms, cross-column schema integrity, relational atomicity, and multi-timestamp lag structures. Through a comprehensive audit and statistical investigation of 8,803 unique titles in Netflix's global streaming catalogue, we established four principal conclusions: (1) metadata missingness in SVOD catalogues is highly non-random, with director omission governed by a powerful format-conditioned MAR mechanism (&chi;<sup>2</sup> = 6,926.74, Cram&eacute;r's <em>V</em> = 0.8871) that invalidates naive listwise deletion; (2) Netflix's international content sourcing exhibits sharp regional format specialization (&chi;<sup>2</sup> = 687.68, Cram&eacute;r's <em>V</em> = 0.3017), contrasting India's theatrical film model (92.0% Movies) against South Korea's (73.6% TV Shows) and Japan's (62.6% TV Shows) serialized television ecosystems; (3) acquisition lag dynamics diverge significantly by format (Mann-Whitney <em>U</em> = 1.035 &times; 10<sup>7</sup>, <em>p</em> = 2.62 &times; 10<sup>&minus;98</sup>), proving that episodic television enters the platform primarily as contemporary first-run programming (52.0% same-year ingestion; median lag = 0.0 years) while feature films combine contemporary premieres with deep back-catalogue licensing (29.1% licensed &ge; 6 years post-release); and (4) reconciling MPAA theatrical ratings with Television Parental Guidelines reverses a common taxonomic artifact, proving that while 75.6% of the catalogue targets Mature Adult and Teen demographics, episodic television allocates a significantly larger share of its portfolio to Kids and Family programming (29.5% vs. 20.7%; &chi;<sup>2</sup> = 98.16, <em>p</em> = 3.86 &times; 10<sup>&minus;21</sup>).
+    This paper demonstrated that elevating exploratory data analysis from superficial chart generation to rigorous empirical science requires systematic interrogation of missingness mechanisms, cross-column schema integrity, relational atomicity, and multi-timestamp lag structures. Through a comprehensive audit and statistical investigation of 8,803 unique titles in Netflix's global streaming catalogue, we established four principal conclusions: (1) metadata missingness in SVOD catalogues is highly non-random, with director omission governed by a powerful format-conditioned MAR mechanism (&chi;<sup>2</sup> = 6,926.74, Cram&eacute;r's <em>V</em> = 0.8871) that invalidates naive listwise deletion; (2) Netflix's international content sourcing exhibits sharp regional format specialization (&chi;<sup>2</sup> = 687.68, Cram&eacute;r's <em>V</em> = 0.3017), contrasting India's theatrical film model (92.0% Movies) against South Korea's (73.6% TV Shows) and Japan's (62.6% TV Shows) serialized television ecosystems; (3) catalogue addition lag dynamics diverge significantly by format (Mann-Whitney <em>U</em> = 1.035 &times; 10<sup>7</sup>, <em>p</em> = 2.62 &times; 10<sup>&minus;98</sup>), proving that episodic television enters the platform primarily as contemporary first-run programming (52.0% same-year ingestion; median lag = 0.0 years) while feature films combine contemporary premieres with deep back-catalogue licensing (29.1% licensed &ge; 6 years post-release); and (4) reconciling MPAA theatrical ratings with Television Parental Guidelines reverses a common taxonomic artifact, proving that while 75.6% of the catalogue targets Mature Adult and Teen demographics, episodic television allocates a significantly larger share of its portfolio to Kids and Family programming (29.5% vs. 20.7%; &chi;<sup>2</sup> = 98.16, <em>p</em> = 3.86 &times; 10<sup>&minus;21</sup>).
   </p>
 
   <h2 class="sec-title">Data &amp; Code Availability Statement</h2>
