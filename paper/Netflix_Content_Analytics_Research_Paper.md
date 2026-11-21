@@ -206,7 +206,25 @@ Comparing Figure 9A (granular rating codes) with Figure 9B (harmonized Audience 
 
 ## 5. Discussion, Limitations & Future Research Directions
 
-### 5.1 Strategic Implications for SVOD Portfolio Management
+### 5.1 Synthesis of Empirical Findings & Architectural Framework (Diagram 5.1)
+
+**Diagram 5.1: Architectural Synthesis of the Netflix Global Catalogue Investigation**
+
+```text
++-----------------------------------+     +------------------------------------+     +---------------------------------------------------+
+| 1. RAW CORPUS AUDIT (N = 8,807)   |     | 2. DUAL-GRAIN 1NF ARCHITECTURE     |     | 3. EMPIRICAL SVOD PORTFOLIO MECHANISMS            |
+|-----------------------------------|     |------------------------------------|     |---------------------------------------------------|
+| * Cross-Column Recovery:          |     | * Title-Grain Base (N = 8,803):    |     | A. Regional Format Specialization (V = 0.3017):   |
+|   3 shifted durations in 'rating' | --> |   6,128 Movies (69.61%)            | --> |    India: 92.0% Movies | S. Korea: 73.6% TV Shows |
+| * Normalized Deduplication:       |     |   2,675 TV Shows (30.39%)          |     | B. Licensing Lag Asymmetry (p = 2.62e-98):        |
+|   4 Unicode \xa0/case pairs       |     | * 1NF Country View (N_c = 10,014): |     |    TV: 52.0% same-year (Median lag = 0.0 yrs)     |
+| * Format-Conditioned MAR Proof:   |     |   122 countries (16.55% co-prod)   |     |    Movies: 29.1% library >=6 yrs (Median = 2.0 y) |
+|   Director null 91.4% TV vs 3.1%M |     | * 1NF Genre View (N_g = 19,315):   |     | C. Single-Season Decay & Maturity Harmonization:  |
+|   (chi2 = 6,926.74, V = 0.8871)   |     |   42 genres | 4 Maturity Tiers     |     |    67.0% TV = 1 season | TV Kids 29.5% vs 20.7% M |
++-----------------------------------+     +------------------------------------+     +---------------------------------------------------+
+```
+
+### 5.1.1 Strategic Implications for SVOD Portfolio Management
 The empirical findings of this study clarify three structural mechanisms governing global SVOD library construction:
 1. **Bifurcated Internationalization Strategy:** Netflix does not acquire uniform format portfolios across international markets. Instead, its regional acquisition strategy mirrors local production comparative advantages—leveraging high-output theatrical film ecosystems in South Asia (India at $92.0\%$ Movies) to build feature volume while relying on East Asian television ecosystems (South Korea at $73.6\%$ TV Shows; Japan at $62.6\%$ TV Shows) for high-retention serialized storytelling.
 2. **Complementary Roles of Movies and TV Shows Across Licensing Windows:** The highly significant divergence in acquisition lag ($p = 2.62 \times 10^{-98}$) demonstrates that television series function primarily as contemporary, first-run catalogue drivers ($51.98\%$ same-year ingestion), whereas feature films serve a dual role—combining same-year original releases ($30.40\%$) with deep library licensing ($29.12\%$ added $6+$ years post-release) to maintain breadth at lower marginal licensing cost.
