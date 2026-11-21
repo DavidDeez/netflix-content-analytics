@@ -1,0 +1,17 @@
+{
+  "id": "davidolu12/netflix-content-analytics-eda",
+  "title": "Netflix Content Analytics EDA",
+  "code_file": "netflix_content_analytics.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": "false",
+  "enable_gpu": "false",
+  "enable_tpu": "false",
+  "enable_internet": "false",
+  "dataset_sources": [
+    "shivamb/netflix-shows"
+  ],
+  "competition_sources": [],
+  "kernel_sources": [],
+  "model_sources": []
+}
